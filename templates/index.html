@@ -10,7 +10,9 @@
 
   {% for pet in pets %}
   <div class="col-3">
-    <img src="{{pet.photo_url}}" alt="photo of {{pet.name}}">
+    <img class="img-thumbnail"
+         src="{{pet.photo_url}}" 
+         alt="photo of {{pet.name}}">
     <p>
       <span class="text-success">{{pet.name}}</span> 
     
