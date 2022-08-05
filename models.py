@@ -18,7 +18,7 @@ class Pet(db.Model):
 
     __tablename__ = "pets"
 
-    id = db.Column(db.Integer,
+    id =db.Column(db.Integer,
                    primary_key=True,
                    autoincrement=True)
     name = db.Column(db.Text,
@@ -26,14 +26,14 @@ class Pet(db.Model):
     species = db.Column(db.Text,
                         nullable=False)
 
-    # //TODO: Remove the default URL
     photo_url = db.Column(db.Text,
-                          default='https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80',
-                          nullable=True)
+                          default='')
     age = db.Column(db.Text,
                     nullable=False)
     notes = db.Column(db.Text,
                     nullable=True)
     available = db.Column(db.Boolean,
                           nullable=False,
-                          default=1)
+                          default=True)
+
+# url for your convenience: https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80

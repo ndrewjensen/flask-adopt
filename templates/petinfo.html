@@ -7,17 +7,17 @@
 
 <h1 class="mx-3"> {{pet.name}}'s Pet Info </h1>
 
-<div>
+<div class="container">
   <img class="img-thumbnail" src="{{pet.photo_url}}" alt="photo of {{pet.name}}">
-  <ul>
+  <ul class="my-3">
     <li>Species: {{pet.species}}</li>
     <li>Age: {{pet.age}}</li>
     <li>Notes: {{pet.notes}}</li>
-    {%if pet.available%}
+    {%if pet.available == 'available'%}
       <li>Available</li>
     {% endif %}
-    {% if not pet.available %}
-      <li>Not Available</li>
+    {% if not pet.available =='not_available' %}
+      Not Available
     {%endif%}
 
   </ul>
@@ -25,7 +25,7 @@
 
 
 <div class="container">
-
+<h3>Update {{pet.name}}'s Profile</h3>
   <form id="pet-edit-form" method="POST">
     {{ form.hidden_tag() }}
     <!--add type=hidden form fields -->
@@ -44,7 +44,7 @@
 
     {% endfor %}
 
-    <button type="submit">Submit</button>
+    <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 
 </div>
