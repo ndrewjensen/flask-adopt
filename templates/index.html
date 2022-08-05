@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block Title %} Adopt a Pet {% endblock%}
+
+{% block Content %} 
+
+<h1 class="mx-3">Pets</h1>
+
+<div class="container">
+
+  {% for pet in pets %}
+  <div class="col-3">
+    <img src="{{pet.photo_url}}" alt="photo of {{pet.name}}">
+    <p>
+      <span class="text-success">{{pet.name}}</span> 
+    
+      {% if pet.available %}
+      <span class="text-secondary"><b>is available!</b></span>
+      {% endif %}
+    </p>
+  </div>
+  {% endfor %}
+
+</div>
+
+<form>
+  <button class="btn btn-success ms-3" 
+          formaction="/add"
+          formmethod="GET">
+    Add a Pet
+  </button>
+</form>
+
+
+{% endblock%}

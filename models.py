@@ -13,20 +13,24 @@ def connect_db(app):
     db.app = app
     db.init_app(app)
 
-class Pet(db.model):
+class Pet(db.Model):
+    """Pet Table"""
+
+    __tablename__ = "pets"
+
     id = db.Column(db.Integer,
                    primary_key=True,
                    autoincrement=True)
-    name = db.Column(db.text,
+    name = db.Column(db.Text,
                      nullable=False)
-    species = db.Column(db.text,
+    species = db.Column(db.Text,
                         nullable=False)
-    photo_url = db.Column(db.text,
+    photo_url = db.Column(db.Text,
                           nullable=False,
                           default='')
-    age = db.Column(db.text,
+    age = db.Column(db.Text,
                     nullable=False)
-    notes = db.Column(db.text,
+    notes = db.Column(db.Text,
                     nullable=True)
     available = db.Column(db.Boolean,
                           nullable=False,
