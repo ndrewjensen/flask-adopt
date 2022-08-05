@@ -29,7 +29,7 @@ class Pet(db.Model):
     # //TODO: Remove the default URL
     photo_url = db.Column(db.Text,
                           default='https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80',
-                          nullable=False)
+                          nullable=True)
     age = db.Column(db.Text,
                     nullable=False)
     notes = db.Column(db.Text,
