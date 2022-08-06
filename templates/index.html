@@ -4,26 +4,28 @@
 
 {% block Content %}
 
-<h1 class="mx-3">Pets</h1>
+<h1 class="mx-4">Pets</h1>
 
 
 <div class="container">
-
+<div class="row">
   {% for pet in pets %}
-  <a href="/{{pet.id}}">
-    <div class="col-3">
-      <img class="img-thumbnail" src="{{pet.photo_url}}" alt="photo of {{pet.name}}">
-      <p>
-        <span class="text-success">{{pet.name}}</span>
+  <div class="col-3">
+    <a href="/{{pet.id}}">
+      <div>
+        <img class="img-thumbnail" src="{{pet.photo_url}}" alt="photo of {{pet.name}}">
+        <p>
+          <span class="text-success">{{pet.name}}</span>
 
-        {% if pet.available %}
-        <span class="text-secondary"><b>is available!</b></span>
-        {% endif %}
-      </p>
-    </div>
-  </a>
+          {% if pet.available %}
+          <span class="text-secondary"><b>is available!</b></span>
+          {% endif %}
+        </p>
+      </div>
+    </a>
+  </div>
   {% endfor %}
-
+</div>
 </div>
 
 <form>
